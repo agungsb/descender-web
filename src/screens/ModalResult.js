@@ -8,7 +8,7 @@ import {
   View
 } from 'react-native';
 import Lottie from 'react-lottie';
-import * as animationData from './../heart-eyes.json';
+import * as animationData from './../clap.json';
 import digitConverter from './../utils/digitConverter';
 var DeviceHeight = Dimensions.get('window').height;
 var DeviceWidth = Dimensions.get('window').width;
@@ -31,18 +31,18 @@ export default class ModalResult extends React.PureComponent {
     return (
       <View style={styles.modalWrapper}>
         <View style={styles.modalContent}>
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Lottie
-              options={defaultOptions}
-              height={400}
-              width={400} />
-            <Text>Your time</Text>
+          <Lottie
+            options={defaultOptions}
+            height={100}
+            width={100} />
+          <View style={{ marginTop: 20, flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <Text style={{ fontSize: 40, fontWeight: 'bold' }}>Your Time</Text>
           </View>
           <View
             style={{
               padding: 20,
               flexDirection: 'row',
-              justifyContent: 'flex-start',
+              justifyContent: 'center',
               alignItems: 'center'
             }}>
             <Text style={styles.text}>{digitConverter(score.min)}</Text>
@@ -53,7 +53,7 @@ export default class ModalResult extends React.PureComponent {
           </View>
           <TouchableOpacity onPress={closeModal}>
             <View style={styles.button}>
-              <Text>Back</Text>
+              <Text style={{ color: '#FFF' }}>Back</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -64,7 +64,7 @@ export default class ModalResult extends React.PureComponent {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: 'lightblue',
+    backgroundColor: '#87CEFA',
     padding: 12,
     margin: 16,
     justifyContent: 'center',
@@ -87,5 +87,9 @@ const styles = StyleSheet.create({
     padding: 22,
     borderRadius: 4,
     borderColor: 'rgba(0, 0, 0, 0.1)',
+  },
+  text: {
+    fontSize: 20,
+    fontWeight: 'bold'
   }
 })
